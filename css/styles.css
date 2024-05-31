@@ -1,28 +1,32 @@
-
-body{
+body {
     font-family: sans-serif;
-    background-color:navy;
+    background-color: navy;
 }
-.containe-imagen{
-    margin: 100px
-    auto;
-    width: 500px;
+
+.containe-imagen {
+    margin: 100px auto;
+    width: auto; 
     display: flex;
+    flex-wrap: nowrap; 
+    justify-content: center;
 }
-.containe-imagen.imagen{
+
+.containe-imagen .imagen {
     position: relative;
-    margin-right: -20px;
+    margin-right: 20px; 
     display: inline-flex;
     flex-direction: column;
-}    
-
-.containe-imagen .imagen img{
-    width: 100px;
-    height: 100px;
-
-    
+    align-items: center;
 }
-.containe-imagen .imagen .nombre{
+
+.containe-imagen .imagen img {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.containe-imagen .imagen .nombre {
     position: absolute;
     background-color: silver;
     border-radius: 5px;
@@ -31,32 +35,44 @@ body{
     min-width: 100px;
     width: 150px;
     margin-top: -25px;
-    left: calc(-50% -25%);
+    left: 50%;
+    transform: translateX(-50%);
     padding: 10px 15px;
-    
 }
-.containe-imagen .imagen .nombre .texto{
-display: inline-block
-;
-text-overflow: ellipsis;
-overflow: hidden;
-white-space: nowrap ;
-margin: 0 auto;
-width: 150px;
-text-align: center;
-box-sizing: border-box;
 
+.containe-imagen .imagen .nombre .texto {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    width: 150px;
+    text-align: center;
+    box-sizing: border-box;
 }
-.containe-imagen .imagen:hover .nombre{
- display: inline-block;
 
+.containe-imagen .imagen:hover .nombre {
+    display: inline-block;
 }
-.containe-imagen .imagen .nombre::before{
-    content:"" ;
+
+.containe-imagen .imagen .nombre::before {
+    content: "";
     position: absolute;
-    width: 1px;
-    height: 1px;
-    left: 40%;
-    bottom: -20px;
-    border-top: solid 10px color black;
+    width: 0;
+    height: 0;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid silver;
 }
+
+.containe-imagen .imagen:hover img {
+    transform: translateY(-5px);
+}
+
+
+
+
+
