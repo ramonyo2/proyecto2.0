@@ -69,7 +69,7 @@ body {
 }
 
 .containe-imagen .imagen:hover img {
-    transform: translateY(-5px);
+    transform: translateY(-15px);
 }
 
 
